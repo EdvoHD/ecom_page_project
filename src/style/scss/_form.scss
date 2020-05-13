@@ -14,7 +14,7 @@
     border-radius: 8px;
     line-height: 22px;
     background-color: rgb(190, 189, 189);
-    border:2px solid $maincolor;
+    border:2px solid $color-primary;
     transition: all 0.3s;
     padding: 13px;
     margin-bottom: 15px;
@@ -24,7 +24,7 @@
    
   }
   
-  .feedback-input:focus { border:2px solid $maincolor; }
+  .feedback-input:focus { border:2px solid $color-primary; }
   
   textarea {
     height: 100px;
@@ -35,11 +35,11 @@
   [type="submit"] {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     width: 100%;
-    background:$maincolor;
+    background:$color-primary;
     border-radius:5px;
     border:0;
     cursor:pointer;
-    color:$TextColor;
+    color:$color-white;
     font-size:24px;
     padding-top:10px;
     padding-bottom:10px;
@@ -47,13 +47,13 @@
     margin-top:-4px;
     font-weight:700;
   }
-  [type="submit"]:hover { background: $hoverColor;
+  [type="submit"]:hover { background: #3e3e3e;
   color: black; }
   
   .contactIcons{
     
     justify-content: center;
-    color: $TextColor;
+    color: $color-white;
     display: flex;
     text-align: center;
     

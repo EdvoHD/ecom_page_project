@@ -1,163 +1,167 @@
-.container {
-    margin: 0 auto;
-    max-width: 80em;
-}
 
-main .container {
-    padding: 1em;
-    position: fixed;
-}
-
-p {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 40em;
-}
-
-.screen-reader-text {
-    clip: rect(1px 1px 1px 1px);
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute !important;
-    width: 1px;
-}
-
-
-
-/************************************************/
-/****************** NAVIGATION ******************/
-/************************************************/
 nav {
-    background: $maincolor;
-    color: $mainBlack;
-    left: 0;
-    position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 9999;
+
+    .nav_menu {
+        position: relative;
+        padding: .7rem 2rem;
+        background: $background-color;
+        box-shadow: $box-shadow-smooth;
+
+
+        .menu_list { // ul
+            position: relative;
+            list-style-type: none;
+            display: flex;
+
+            @include mobile {
+                opacity: 0;
+            }
+
+            .menu_list_item {
+                position: relative;
+                font-size: 1rem;
+                color: $color-primary;
+                margin: 0 1rem;
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $color-primary;
+        font-weight: 700;
+        font-size: 1.2rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    input#burger_toggler {
+        position: absolute;
+        top: -.2rem;
+        right: .5rem;
+        width: 42px;
+        height: 42px;
+        z-index: 3;
+        opacity: 0;
+        display: none;
+
+        @include mobile {
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    
+
+    .burger_icon_container {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        display: none;
+
+        @include mobile {
+            display: block;
+        }
+
+        .burger_icon {
+            width: $burger_icon_width;
+            height: $burger_icon_height;
+            background: $color-primary;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: $burger_margin;
+                width: $burger_icon_width;
+                height: $burger_icon_height;
+                background: $color-primary;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                top: -$burger_margin;
+                width: $burger_icon_width;
+                height: $burger_icon_height;
+                background: $color-primary;
+            }
+        }
+    }
+
+    .nav_burger_menu {
+        padding: 2rem 1rem;
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        // height: 30vh; // auto är bättre anpassad
+        transform: translateY(-150%);
+        transition: .5s ease;
+        background: $background-color;
+        box-shadow: 0 3px 3px #0000002e;
+        z-index: 2;
+        // animation: menuDisappear 1s ease-in-out forwards;
+
+        .burger_list { // ul
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .burger_list_item {
+                margin: .2rem 0;
+
+                a {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    #burger_toggler[type=checkbox]:checked ~ .nav_burger_menu {
+        animation: menuAppear .5s ease-in-out;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #burger_toggler[type=checkbox]:checked ~ .nav_menu {
+        display: none;
+    }
+
+    #burger_toggler[type=checkbox]:checked ~ .burger_icon {
+
+    }
 }
 
-/*** INPUT ***/
-nav input {
-    opacity: 0;
-    position: absolute;
-    z-index: -1;
+@keyframes menuAppear {
+    0% {
+        transform: translateY(-150%);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+@keyframes menuDisappear {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 
-/*** LABEL ***/
-nav label {
-    cursor: pointer;
-    display: block;
-    font: 2em/1 'Oswald', sans-serif;
-    padding: 0.3em;
-}
+    10% {
+        opacity: 1;
+        transform: translateY(-5%);
+    }
 
-/* Hamburger Icon */
-#menu-icon,
-#menu-icon:before,
-#menu-icon:after {
-    background: $mainBlack;
-    border-radius: 0.05em;
-    height: 0.2em;
-    transition: all 0.2s ease-in-out;
-    width: 100%;
-}
-
-#menu-icon {
-    display: inline-block;
-    margin: 0.4em 0;
-    max-width: 1em;
-    position: relative;
-}
-
-
-nav label #menu-icon {
-    float: right;
-}
-
-#menu-icon:before,
-#menu-icon:after {
-    content: '';
-    left: 0;
-    position: absolute;
-}
-
-#menu-icon:before {
-    top: -0.4em;
-}
-
-#menu-icon:after {
-    bottom: -0.4em;
-}
-
-/* Close Icon */
-nav input[type=checkbox]:checked + label #menu-icon {
-    background: transparent;
-}
-
-nav input[type=checkbox]:checked + label #menu-icon:before {
-    top: 0;
-    transform: rotate(-45deg);
-}
-
-nav input[type=checkbox]:checked + label #menu-icon:after {
-    bottom: 0;
-    transform: rotate(45deg);
-}
-
-
-/*** MENU ***/
-/* Overlay */
-nav input:checked ~ #overlay {
-    background: #e5e5e5;
-    bottom: 0;
-    left: 0;
-    height: 30vh;
-    position: relative;
-    right: 0;
-    top: 0;
-    width: 35vw;
-    z-index: -1;
-}
-
-/* List */
-nav ul {
-    font-size: 1.5em;
-    list-style: none;
-    margin: 0;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    padding: 0;
-    text-align: center;
-}
-
-nav input:checked ~ ul {
-    margin: 1em;
-    max-height: inherit;
-    opacity: 1;
-}
-
-nav ul > li {
-    margin: 0.5em 0;
-}
-nav ul > li :hover{
-    color: #00EEFF;
-}
-
-nav ul a {
-    color: $mainBlack!important;
-    text-decoration: none;
-}
-
-nav ul a:hover {
-    text-decoration: underline;
-}
-
-/* Social Media */
-nav ul#social-media > li {
-    display: inline-block;
-    font-size: 1.5em;
-    margin: 0.5em;
+    100% {
+        transform: translateY(-150%);
+        opacity: 0;
+    }
 }

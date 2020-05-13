@@ -4,10 +4,10 @@
 React har valts av kursledaren.
 
 Fördelar:
-    - Virtual DOM gör så att användarna får en bättre upplevelse och utvecklarna arbetar snabbare
-    - Ett opensource Facebook bibliotek
-    - "Reusable" Komponenter
-    - Kännt för att vara SEO vänligt
+    - Virtual DOM gör så att användarna får en bättre upplevelse och utvecklarna arbetar snabbare. Pga av att virtual DOM sköter många updates som då användarens browser slipper återrendrera hela tiden. 
+    - Ett opensource Facebook bibliotek som dessutom har stor funding vilket gör att react utvecklas vidare, förmodligen i flera år.
+    - "Reusable" Komponenter. Återanvänder komponenter som gör att detta verktyg är så kraftfullt. Detta tillåter dig att inte behöva upprepa kod vilket gör processen snabbare samt skalbart.
+    - SEO - friendly
 
 Nackdelar:
     - Ont om dokumentation

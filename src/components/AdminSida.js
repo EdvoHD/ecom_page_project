@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-
-
-import AdminProfile from "./auth/AdminProfile";
-import AdminLogin from "./auth/AdminLogin";
+import AdminProfile from "./Auth/AdminProfile";
+import AdminLogin from "./Auth/AdminLogin";
 
 
 class AdminSida extends Component {

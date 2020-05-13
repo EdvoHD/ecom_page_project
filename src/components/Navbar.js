@@ -7,19 +7,31 @@ const Navbar = ()=>{
     return(
 
 
-
-        
         <nav>
-          <div className={"Menu-container"}>
-              <input id={"responsive-menu"} type={"checkbox"}/>
-              <label htmlFor={"responsive-menu"}>Menu <span id={"menu-icon"}></span></label>
-            
-              <ul> <li><Link to="/">Start</Link></li>
-                  <li><Link to="/Card.js">Features</Link></li>
-                  <li><Link to="/Booking.js">Bookings</Link></li>
-                  <li><Link to="/Form">Form</Link></li>
-                  <li><Link to="/adminpage">Admin</Link></li>
+          <div className="nav_menu">
+              <ul className={"menu_list"}>
+                <li className={"menu_list_item"}><Link to="/">Home</Link> </li>
+                <li className={"menu_list_item"}><Link to="/Card.js">Cards</Link> </li>
+                <li className={"menu_list_item"}><Link to="/Booking.js">Booking</Link> </li>
+                <li className={"menu_list_item"}><Link to="/Form">Form</Link> </li>
+                <li className={"menu_list_item"}><Link to="/adminpage">Admin</Link> </li>
               </ul>
+          </div>
+          
+          <input id={"burger_toggler"} type={"checkbox"}/>
+
+          <div className={"burger_icon_container"}>
+            <div className={"burger_icon"}></div>
+          </div>
+
+          <div className={"nav_burger_menu"}>
+            <ul className={"burger_list"}>
+              <li className={"burger_list_item"}><Link to="/">Home</Link> </li>
+              <li className={"burger_list_item"}><Link to="/Card.js">Cards</Link> </li>
+              <li className={"burger_list_item"}><Link to="/Booking.js">Booking</Link> </li>
+              <li className={"burger_list_item"}><Link to="/Form">Form</Link> </li>
+              <li className={"burger_list_item"}><Link to="/adminpage">Admin</Link> </li>
+            </ul>
           </div>
         </nav>
      
