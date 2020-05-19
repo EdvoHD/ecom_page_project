@@ -9,8 +9,8 @@ class AdminSida extends Component {
         jwt: null
     }
 
-    callback(e, jwt){
-        this.setState({ user: e.email, jwt: jwt })
+    callback(user, jwt){
+        this.setState({ user: user.email, jwt: jwt })
         localStorage.setItem("jwt", this.state.jwt)
         localStorage.setItem("user", this.state.user)
     }

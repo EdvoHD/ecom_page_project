@@ -29,10 +29,8 @@ class App extends Component{
                         price={produkt.price}
                         description={produkt.description}
                         /> 
-                    
-                           
-                    )}
-                    
+                       
+                    )} 
                                 
             </div>
         )

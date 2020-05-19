@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-
 import axios from "axios";
-
-
 
 class Adminform extends Component{
 
-    state={
+    state = {
         image:" "
     }
 
@@ -27,9 +24,6 @@ class Adminform extends Component{
             
         })
 
-
-      
-
         console.log(res)
 
         const data = new FormData();
@@ -40,7 +34,6 @@ class Adminform extends Component{
 
         const resPic = await axios.post("http://localhost:1337/upload", data)
         console.log(resPic)
-        
 
     }
 
@@ -48,18 +41,15 @@ class Adminform extends Component{
         return(
             <div>
                 <form onSubmit={this.onSubmitToDbase.bind(this)}>
-
                     <input type="text" name="title" placeholder="Produkttitel"/><br/>
                     <textarea type="text" name="description" rows="10" cols="25" placeholder="Beskrivning"></textarea><br/>
                     <input type="number" name="price" placeholder="Pris"/><br/>
                     <input type="file" onChange={this.eventChange.bind(this)} name="file"/><br/>                    
                     <button>Spara</button>
-                    
                 </form>
             </div>
         )
     }
-
 }
 
 export default Adminform
