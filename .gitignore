@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#extras för att skydda api nyckel ifrån firestore/firebase
+src/components/FirebaseConfig

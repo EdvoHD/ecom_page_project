@@ -3,9 +3,12 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
+// --SETUP för firebase--
 // SDK ifrån Firebase
+// npm i -g firebase-tools paketet 
+// npm i firebase 
 const firebaseConfig = {
-    apiKey: "AIzaSyC6eSlLRnbE2LYdEHalFKNrd-la7PsuFL4",
+    apiKey: "AIzaSyC6eSlLRnbE2LYdEHalFKNrd-la7PsuFL4", // hur skyddar vi denna api key
     authDomain: "test-app-ab80b.firebaseapp.com",
     databaseURL: "https://test-app-ab80b.firebaseio.com",
     projectId: "test-app-ab80b",
@@ -15,7 +18,7 @@ const firebaseConfig = {
     measurementId: "G-8QD0W6W7CH"
   };
 
-  // InitializeApp 
+  // Initialize firebase med variabeln firebaseConfig
   firebase.initializeApp(firebaseConfig);
 
   // Denna är deprecated och kommer tas bort i framtida updates
@@ -23,6 +26,7 @@ const firebaseConfig = {
   //firebase.firestore().settings({timestampsInSnapshots:true});
 
   // object destructuring
+  // Googleprovider för inlogg via google 
   export const googleProvider = new firebase.auth.GoogleAuthProvider();
   export const auth = firebase.auth();
   export default firebase;

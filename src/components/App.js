@@ -23,7 +23,8 @@ class App extends Component{
         return(
             <div className={"card_main_container"}>  
                     {this.state.produkts.map((produkt) =>
-                        <Card 
+                        <Card key={produkt.id} 
+                        id={produkt.id}
                         image={produkt.image}
                         title={produkt.title}
                         price={produkt.price}
