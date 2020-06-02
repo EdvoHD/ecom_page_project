@@ -15,6 +15,7 @@ const Navbar = ()=>{
                 <li className={"menu_list_item"}><Link to="/Booking.js">Booking</Link> </li>
                 <li className={"menu_list_item"}><Link to="/Form">Form</Link> </li>
                 <li className={"menu_list_item"}><Link to="/adminpage">Admin</Link> </li>
+                <li className={"menu_list_item"}><Link to="/userpage">Login</Link> </li>
               </ul>
           </div>
           
@@ -31,6 +32,7 @@ const Navbar = ()=>{
               <li className={"burger_list_item"}><Link to="/Booking.js">Booking</Link></li>
               <li className={"burger_list_item"}><Link to="/Form">Form</Link></li>
               <li className={"burger_list_item"}><Link to="/adminpage">Admin</Link></li>
+              <li className={"burger_list_item"}><Link to="/userpage">Login</Link></li>
             </ul>
           </div>
         </nav>

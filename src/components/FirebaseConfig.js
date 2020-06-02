@@ -32,6 +32,8 @@ const firebaseConfig = {
   export default firebase;
 
 
+  // Private och Public keys , sök upp RSA krypterings teknik
+
 
 /* 
 db.collection("users").get().then((querySnapshot) => {

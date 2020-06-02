@@ -14,7 +14,7 @@ class App extends Component{
     }
 
     async componentDidMount(){
-        axios.get("http://localhost:1337/produkts").then(  res => {
+        axios.get("http://localhost:1337/produkts").then(res => {
             console.log(res.data);
             this.setState({produkts:res.data})
         })

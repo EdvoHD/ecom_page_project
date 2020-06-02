@@ -7,7 +7,8 @@ import Adminform from "./Adminform";
 import App from "./App";
 import AdminSida from "./AdminSida";
 import FirebaseTest from "./FirebaseTest";
-import UserPage from "./AuthUser/UserPage"; 
+import UserPage from "./AuthUser/UserPage";
+import userVerified from "./AuthUser/userVerified.js";
 //import UserLogin from "./AuthUser/UserLogin";
 
 
@@ -27,8 +28,8 @@ const Approute = ()=>{
                  <Route path="/admin" exact component= {Adminform}></Route>                
                  <Route path="/adminpage" exact component= {AdminSida}></Route>
                  <Route path="/firebasetest" exact component = {FirebaseTest}></Route>
-
                  <Route path="/userpage" exact component = {UserPage}></Route>
+                 <Route path="/verified" exact component = {userVerified}></Route>
 
             </BrowserRouter>
             
