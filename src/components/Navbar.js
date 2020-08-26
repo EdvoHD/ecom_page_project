@@ -10,12 +10,13 @@ const Navbar = ()=>{
         <nav>
           <div className="nav_menu">
               <ul className={"menu_list"}>
-                <li className={"menu_list_item"}><Link to="/">Home</Link> </li>
-                <li className={"menu_list_item"}><Link to="/Card.js">Cards</Link> </li>
-                <li className={"menu_list_item"}><Link to="/Booking.js">Booking</Link> </li>
-                <li className={"menu_list_item"}><Link to="/Form">Form</Link> </li>
-                <li className={"menu_list_item"}><Link to="/adminpage">Admin</Link> </li>
-                <li className={"menu_list_item"}><Link to="/userpage">Login</Link> </li>
+                <li className={"menu_list_item"}><Link to="/">Home</Link></li>
+                <li className={"menu_list_item"}><Link to="/Card.js">Cards</Link></li>
+                <li className={"menu_list_item"}><Link to="/Booking.js">Booking</Link></li>
+                <li className={"menu_list_item"}><Link to="/Form">Form</Link></li>
+                <li className={"menu_list_item"}><Link to="/adminpage">Admin</Link></li>
+                <li className={"menu_list_item"}><Link to="/userpage">Login</Link></li>
+                <li className={"menu_list_item"}><Link to="/contact">Contact</Link></li>
               </ul>
           </div>
           
@@ -33,6 +34,7 @@ const Navbar = ()=>{
               <li className={"burger_list_item"}><Link to="/Form">Form</Link></li>
               <li className={"burger_list_item"}><Link to="/adminpage">Admin</Link></li>
               <li className={"burger_list_item"}><Link to="/userpage">Login</Link></li>
+              <li className={"burger_list_item"}><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
         </nav>

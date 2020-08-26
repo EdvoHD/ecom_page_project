@@ -1,9 +1,11 @@
 // register / login 
 // conditional rendering
 // state 
+// npm i react-firebaseui
 
 import React, {Component} from "react";
 import firebase from "../FirebaseConfig";
+// npm i react-firebaseui
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import UserProfile from "./UserProfile";
 
@@ -28,14 +30,17 @@ class UserLogin extends Component {
     ]
  };
 
- componentDidMount() {
-    // körs efter render har körts 
-    firebase.auth().onAuthStateChanged((user) => {
-        this.setState({user:user.email}) // user:user om nyckel och värde är detsamma. 
-        console.log(user);
+ componentDidMount(){
+    
+    firebase.auth().onAuthStateChanged((user)=>{
+     if(user){  this.setState({user:user.email}) //user:user
+       console.log(user);
+    }else{
+        console.log(this.state.user);
+    }
     })
-    // skicka data till parent?
- }
+    //skicka data till parent
+}
 
 
  onClickRegister(){
@@ -54,6 +59,7 @@ onSubmitLogin(e){
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(res=> 
 
+        // anropa showDisplayName
         this.props.userCredential(res.user.email)
         
         ) // res och därifrån i console kan du kolla vilken data du vill catcha user.email displayar email (duh!)
@@ -70,7 +76,8 @@ onSubmitLogin(e){
      firebase.auth().createUserWithEmailAndPassword(email, password)
      .then( (res)=> {
          console.log(res);
-         
+
+         // ifrån child till parent med hjälp av callback function
          res.user.sendEmailVerification()
          this.props.userCredential(res.user.email);
          this.props.showDisplayName(displayName); 

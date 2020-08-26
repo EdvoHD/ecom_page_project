@@ -27,7 +27,7 @@ class UserPage extends Component {
                         showDisplayName = { (username) => {
                             firebase.auth().onAuthStateChanged((user)=> {
                                 user.updateProfile({
-                                    displayName: username
+                                    displayName :username
                                 }).then( ()=> {
                                     this.setState({
                                         displayName: user.displayName
@@ -38,7 +38,7 @@ class UserPage extends Component {
                             })
                         } }
                      /> :
-                    <UserProfile userData={this.state.displayName} />
+                    <UserProfile userData={this.state.displayName || this.state.user } />
                 }
             </div>
         )

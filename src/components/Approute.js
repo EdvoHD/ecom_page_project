@@ -9,6 +9,7 @@ import AdminSida from "./AdminSida";
 import FirebaseTest from "./FirebaseTest";
 import UserPage from "./AuthUser/UserPage";
 import userVerified from "./AuthUser/userVerified.js";
+import Contact from "./Contact";
 //import UserLogin from "./AuthUser/UserLogin";
 
 
@@ -30,6 +31,7 @@ const Approute = ()=>{
                  <Route path="/firebasetest" exact component = {FirebaseTest}></Route>
                  <Route path="/userpage" exact component = {UserPage}></Route>
                  <Route path="/verified" exact component = {userVerified}></Route>
+                 <Route path="/contact" exact component = {Contact}></Route>
 
             </BrowserRouter>
             

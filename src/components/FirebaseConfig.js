@@ -7,9 +7,13 @@ import "firebase/auth";
 // SDK ifrån Firebase
 // npm i -g firebase-tools paketet 
 // npm i firebase 
+// npm i dotenv som då sköter läsningen av .env - filerna eftersom det inte är javascript i den filen.
+
+require('dotenv').config();
+
 const firebaseConfig = {
-    apiKey: "AIzaSyC6eSlLRnbE2LYdEHalFKNrd-la7PsuFL4", // hur skyddar vi denna api key
-    authDomain: "test-app-ab80b.firebaseapp.com",
+    apiKey: process.env.REACT_APP_API_KEY, // hur skyddar vi denna api key, via .env filer
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
     databaseURL: "https://test-app-ab80b.firebaseio.com",
     projectId: "test-app-ab80b",
     storageBucket: "test-app-ab80b.appspot.com",
@@ -17,6 +21,10 @@ const firebaseConfig = {
     appId: "1:522789891200:web:b6ff165995d953a9b90a65",
     measurementId: "G-8QD0W6W7CH"
   };
+
+  console.log(firebaseConfig.apiKey);
+  console.log(process.APIKEY);
+  
 
   // Initialize firebase med variabeln firebaseConfig
   firebase.initializeApp(firebaseConfig);
